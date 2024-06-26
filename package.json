@@ -1,0 +1,79 @@
+{
+	"name": "@chr33s/config",
+	"version": "0.1.0",
+	"license": "MIT",
+	"type": "module",
+	"exports": {
+		".": "./index.js",
+		"./browserslist": "./browserslist.js",
+		"./eslint": "./eslint.js",
+		"./postcss": "./postcss.js",
+		"./prettier": "./prettier.js",
+		"./stylelint": "./stylelint.js",
+		"./tailwindcss": "./tailwindcss.js",
+		"./typescript": "./typescript.json",
+		"./vite": "./vite.js",
+		"./vitest": "./vitest.js"
+	},
+	"imports": {
+		"~/*": "./*"
+	},
+	"files": [
+		"browserslist.js",
+		"eslint.js",
+		"LICENSE",
+		"package.json",
+		"postcss.js",
+		"prettier.js ",
+		"README.md",
+		"stylelint.js",
+		"tailwindcss.js",
+		"types.d.ts",
+		"typescript.json ",
+		"vite.js ",
+		"vitest.js"
+	],
+	"scripts": {
+		"lint": "eslint .",
+		"format": "prettier --write ."
+	},
+	"engines": {
+		"node": "20.15.0",
+		"npm": "9.6.4"
+	},
+	"packageManager": "npm@9.6.4+sha512.f3f31cb745ffc3becf9a02294a55df3483a5ad905f4fef3debaccb0b13a1c22d6a67651ecb2f7db963d20d6e9bb7638ac35373aef1c9052824cc0be7d625ae87",
+	"devDependencies": {
+		"@eslint/js": "9.5.0",
+		"@types/eslint__js": "8.42.3",
+		"@types/eslint-config-prettier": "6.11.3",
+		"@types/react": "18.3.3",
+		"@types/react-dom": "18.3.0",
+		"@vitejs/plugin-react": "4.3.1",
+		"autoprefixer": "10.4.19",
+		"browserslist": "4.23.1",
+		"eslint-config-prettier": "9.1.0",
+		"eslint-plugin-react": "7.34.3",
+		"eslint-plugin-react-hooks": "4.6.2",
+		"eslint-plugin-regexp": "2.6.0",
+		"eslint-plugin-storybook": "0.8.0",
+		"globals": "15.6.0",
+		"happy-dom": "14.12.3",
+		"postcss-import": "16.1.0",
+		"postcss-prefix-selector": "1.16.1",
+		"postcss-preset-env": "9.5.14",
+		"rollup-plugin-visualizer": "5.12.0",
+		"stylelint-order": "6.0.4",
+		"stylelint-prettier": "5.0.0",
+		"typescript": "5.5.2",
+		"typescript-eslint": "7.14.1"
+	},
+	"peerDependencies": {
+		"eslint": "8",
+		"postcss": "8",
+		"prettier": "3",
+		"stylelint": "16",
+		"typescript": "5",
+		"vite": "5",
+		"vitest": "1"
+	}
+}

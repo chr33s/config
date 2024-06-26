@@ -1,0 +1,9 @@
+{
+	"css.lint.unknownAtRules": "ignore",
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"tailwindCSS.experimental.classRegex": [
+		["clsx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"]
+	],
+	"typescript.tsdk": "node_modules/typescript/lib",
+	"typescript.enablePromptUseWorkspaceTsdk": true
+}
