@@ -1,5 +1,7 @@
 # @chr33s/config
 
+> Typescript/Javascript config
+
 ## Setup
 
 ```sh
