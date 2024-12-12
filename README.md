@@ -61,6 +61,17 @@ export default {
 };
 ```
 
+`svgo.config.js`
+
+```js
+import config from "@chr33s/config/svgo";
+
+/** @type {import('svgo').Config} */
+export default {
+	...config,
+};
+```
+
 `tsconfig.json`
 
 ```json

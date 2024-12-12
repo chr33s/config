@@ -10,13 +10,11 @@
 		"./postcss": "./postcss.js",
 		"./prettier": "./prettier.js",
 		"./stylelint": "./stylelint.js",
+		"./svgo": "./svgo.js",
 		"./tailwindcss": "./tailwindcss.js",
 		"./typescript": "./typescript.json",
 		"./vite": "./vite.js",
 		"./vitest": "./vitest.js"
-	},
-	"imports": {
-		"~/*": "./*"
 	},
 	"files": [
 		"browserslist.js",
@@ -27,6 +25,7 @@
 		"prettier.js ",
 		"README.md",
 		"stylelint.js",
+		"svgo.js",
 		"tailwindcss.js",
 		"types.d.ts",
 		"typescript.json ",
@@ -34,46 +33,69 @@
 		"vitest.js"
 	],
 	"scripts": {
-		"lint": "eslint .",
-		"format": "prettier --write ."
+		"eslint": "eslint --cache --cache-location=./node_modules/.cache/eslint --config=./eslint.js",
+		"format": "npm run prettier -- --write",
+		"lint": "npm run eslint && npm run prettier -- --check",
+		"prettier": "prettier --cache --config=./prettier.js .",
+		"update": "npm-check-updates --install=always --peer --silent --upgrade"
 	},
-	"engines": {
-		"node": "20.15.0",
-		"npm": "9.6.4"
+	"dependencies": {
+		"prettier": "3.4.2",
+		"stylelint": "16.11.0",
+		"vitest": "2.1.8"
 	},
-	"packageManager": "npm@9.6.4+sha512.f3f31cb745ffc3becf9a02294a55df3483a5ad905f4fef3debaccb0b13a1c22d6a67651ecb2f7db963d20d6e9bb7638ac35373aef1c9052824cc0be7d625ae87",
 	"devDependencies": {
-		"@eslint/js": "9.6.0",
-		"@types/eslint__js": "8.42.3",
+		"@eslint/js": "9.16.0",
+		"@svgr/plugin-jsx": "8.1.0",
+		"@svgr/plugin-svgo": "8.1.0",
+		"@tailwindcss/aspect-ratio": "0.4.2",
+		"@tailwindcss/forms": "0.5.9",
+		"@tailwindcss/typography": "0.5.15",
 		"@types/eslint-config-prettier": "6.11.3",
-		"@types/react": "18.3.3",
-		"@types/react-dom": "18.3.0",
-		"@vitejs/plugin-react": "4.3.1",
-		"autoprefixer": "10.4.19",
-		"browserslist": "4.23.1",
+		"@types/eslint__js": "8.42.3",
+		"@types/react": "19.0.1",
+		"@types/react-dom": "19.0.2",
+		"@vitejs/plugin-react": "4.3.4",
+		"autoprefixer": "10.4.20",
+		"browserslist": "4.24.2",
 		"eslint-config-prettier": "9.1.0",
-		"eslint-plugin-react": "7.34.3",
-		"eslint-plugin-react-hooks": "4.6.2",
-		"eslint-plugin-regexp": "2.6.0",
-		"eslint-plugin-storybook": "0.8.0",
-		"globals": "15.8.0",
-		"happy-dom": "14.12.3",
+		"eslint-import-resolver-typescript": "3.7.0",
+		"eslint-plugin-import": "2.31.0",
+		"eslint-plugin-jsx-a11y": "6.10.2",
+		"eslint-plugin-react": "7.37.2",
+		"eslint-plugin-react-hooks": "5.1.0",
+		"eslint-plugin-regexp": "2.7.0",
+		"eslint-plugin-storybook": "0.11.1",
+		"globals": "15.13.0",
+		"happy-dom": "15.11.7",
 		"postcss-import": "16.1.0",
-		"postcss-prefix-selector": "1.16.1",
-		"postcss-preset-env": "9.6.0",
+		"postcss-prefix-selector": "2.1.0",
+		"postcss-preset-env": "10.1.1",
+		"prettier-plugin-packagejson": "2.5.6",
+		"prettier-plugin-tailwindcss": "0.6.9",
 		"rollup-plugin-visualizer": "5.12.0",
 		"stylelint-order": "6.0.4",
-		"stylelint-prettier": "5.0.0",
-		"typescript": "5.5.3",
-		"typescript-eslint": "7.15.0"
+		"stylelint-prettier": "5.0.2",
+		"typescript": "5.7.2",
+		"typescript-eslint": "8.18.0",
+		"vite-plugin-svgr": "4.3.0",
+		"vite-tsconfig-paths": "5.1.4"
 	},
 	"peerDependencies": {
-		"eslint": "8",
+		"eslint": "9",
 		"postcss": "8",
-		"prettier": "3",
-		"stylelint": "16",
+		"react": "19",
+		"react-dom": "19",
+		"storybook": "8",
 		"typescript": "5",
-		"vite": "5",
-		"vitest": "1"
+		"vite": "6"
+	},
+	"optionalDependencies": {
+		"npm-check-updates": "17.1.11"
+	},
+	"packageManager": "npm@10.9.2",
+	"engines": {
+		"node": "22.11.0",
+		"npm": "10.9.0"
 	}
 }

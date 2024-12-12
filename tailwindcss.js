@@ -1,13 +1,26 @@
-import defaultTheme from "tailwindcss/defaultTheme";
+import aspectRatio from "@tailwindcss/aspect-ratio";
 import plugin from "tailwindcss/plugin";
 import forms from "@tailwindcss/forms";
+import typography from "@tailwindcss/typography";
+import defaultTheme from "tailwindcss/defaultTheme";
 
 /** @type {import('tailwindcss').Config} */
 export default {
 	content: ["**/*.{js,jsx,ts,tsx}"],
 	plugins: [
 		forms(),
-		plugin(({ matchUtilities, theme }) => {
+		aspectRatio(),
+		typography(),
+		plugin(({ addUtilities, matchUtilities, theme }) => {
+			addUtilities({
+				".scrollbar-none::-webkit-scrollbar": {
+					display: "none",
+				},
+				".scrollbar-none": {
+					"-ms-overflow-style": "none" /* IE and Edge */,
+					"scrollbar-width": "none" /* Firefox */,
+				},
+			});
 			matchUtilities(
 				{
 					"animation-delay": (value) => ({
@@ -16,8 +29,14 @@ export default {
 				},
 				{ values: theme("transitionDelay") },
 			);
-		}),
-		plugin(({ matchUtilities }) => {
+			matchUtilities(
+				{
+					"text-shadow": (value) => ({
+						textShadow: value,
+					}),
+				},
+				{ values: theme("textShadow") },
+			);
 			matchUtilities(
 				{
 					"text-rendering": (value) => ({
