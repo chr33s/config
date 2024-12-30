@@ -1,6 +1,6 @@
 import eslint from "@eslint/js";
 import prettier from "eslint-config-prettier";
-import importPlugin from "eslint-plugin-import";
+import importPlugin from "eslint-plugin-import-x";
 import jsxA11y from "eslint-plugin-jsx-a11y";
 import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
@@ -50,8 +50,8 @@ export default config(
 					caughtErrorsIgnorePattern: "^_",
 				},
 			],
-			"import/no-dynamic-require": "warn",
-			"import/no-nodejs-modules": "warn",
+			"import-x/no-dynamic-require": "warn",
+			"import-x/no-nodejs-modules": "warn",
 			"no-unused-vars": "off",
 			"react/no-unknown-property": [
 				"error",
@@ -74,11 +74,11 @@ export default config(
 			],
 		},
 		settings: {
-			"import/internal-regex": "^~/",
-			"import/parsers": {
+			"import-x/internal-regex": "^~/",
+			"import-x/parsers": {
 				"typescript-eslint": [".ts", ".tsx"],
 			},
-			"import/resolver": {
+			"import-x/resolver": {
 				node: true,
 				typescript: true,
 			},
@@ -94,6 +94,7 @@ export default config(
 			"**/dist/*",
 			"**/generated/*",
 			"**/node_modules/*",
+			"eslint.js",
 		],
 	},
 	prettier,
