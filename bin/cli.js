@@ -1,3 +1,7 @@
+#!/usr/bin/env node
+
+process.removeAllListeners("warning");
+
 import { spawn as _spawn } from "node:child_process";
 import { stat, writeFile } from "node:fs/promises";
 import { parseArgs } from "node:util";
