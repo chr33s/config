@@ -39,7 +39,7 @@ export default {
 };
 ```
 
-`.prettierrc.js`
+`prettier.config.js`
 
 ```js
 import config from "@chr33s/config/prettier";
@@ -72,6 +72,17 @@ export default {
 };
 ```
 
+`tailwind.config.js`
+
+```js
+import config from "@chr33s/config/tailwindcss";
+
+/** @type {import('tailwindcss').Config} */
+export default {
+	...config,
+};
+```
+
 `tsconfig.json`
 
 ```json
@@ -92,6 +103,17 @@ export default {
 import config from "@chr33s/config/vite";
 
 /** @type {import("vite").UserConfig} */
+export default {
+	...config,
+};
+```
+
+`vitest.config.js`
+
+```js
+import config from "@chr33s/config/vitest";
+
+/** @type {import("vitest").UserConfig} */
 export default {
 	...config,
 };
