@@ -18,6 +18,7 @@
 	},
 	"bin": "./bin/cli.js",
 	"files": [
+		".editorconfig",
 		"browserslist.js",
 		"bin/cli.js",
 		"eslint.js",

@@ -3,7 +3,7 @@
 process.removeAllListeners("warning");
 
 import { spawn as _spawn } from "node:child_process";
-import { stat, writeFile } from "node:fs/promises";
+import { readFile, stat, writeFile } from "node:fs/promises";
 import { parseArgs } from "node:util";
 
 export const args = parseArgs({
@@ -94,5 +94,10 @@ export default [...config];
 	"extends": ["@chr33s/config/{config}"],
 	"include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
 }`,
-	})
+	}),
+	await write({
+		config: ".editorconfig",
+		file: ".editorconfig",
+		template: await readFile(".editorconfig", "utf8"),
+	}),
 );
