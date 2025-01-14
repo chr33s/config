@@ -1,4 +1,4 @@
-/** @type {import("eslint").Linter.Config} */
+/** @type {import("browserslist").Config} */
 export default {
 	production: ["> 1%", "not dead"],
 	modern: ["last 1 version"],

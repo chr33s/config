@@ -9,6 +9,7 @@ import storybook from "eslint-plugin-storybook";
 import globals from "globals";
 import { config, configs } from "typescript-eslint";
 
+/** @type {import('eslint').Config} */
 export default config(
 	eslint.configs.recommended,
 	...configs.recommended,
