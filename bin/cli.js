@@ -87,13 +87,12 @@ export default [...config];
 			`,
 		}),
 	),
-);
-
-await write({
-	config: "typescript",
-	file: "tsconfig.json",
-	template: /* json */ `{
+	await write({
+		config: "typescript",
+		file: "tsconfig.json",
+		template: /* json */ `{
 	"extends": ["@chr33s/config/{config}"],
 	"include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
 }`,
-});
+	})
+);
