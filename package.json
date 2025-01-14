@@ -16,8 +16,10 @@
 		"./vite": "./vite.js",
 		"./vitest": "./vitest.js"
 	},
+	"bin": "./bin/cli.js",
 	"files": [
 		"browserslist.js",
+		"bin/cli.js",
 		"eslint.js",
 		"LICENSE",
 		"package.json",
