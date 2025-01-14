@@ -39,12 +39,6 @@ function spawn(cmd, args) {
 	});
 }
 
-await spawn(
-	"npm",
-	["install", "--save-dev", dryRun ? "--dry-run" : undefined, "@chr33s/config"],
-	{},
-);
-
 const configs = {
 	browserslist: "browserslist.js",
 	eslint: "eslint.config.js",
@@ -77,6 +71,17 @@ async function write({ file, config, template }) {
 }
 
 await Promise.all(
+	await spawn(
+		"npm",
+		[
+			"install",
+			"--save-dev",
+			"--legacy-peer-deps",
+			dryRun ? "--dry-run" : undefined,
+			"@chr33s/config",
+		],
+		{},
+	),
 	Object.entries(configs).map(([config, file]) =>
 		write({
 			config,
