@@ -4,6 +4,7 @@ process.removeAllListeners("warning");
 
 import { spawn as _spawn } from "node:child_process";
 import { readFile, stat, writeFile } from "node:fs/promises";
+import { resolve } from "node:path";
 import { parseArgs } from "node:util";
 
 export const args = parseArgs({
@@ -103,6 +104,9 @@ export default [...config];
 	await write({
 		config: ".editorconfig",
 		file: ".editorconfig",
-		template: await readFile(".editorconfig", "utf8"),
+		template: await readFile(
+			resolve(import.meta.dirname, "..", ".editorconfig"),
+			"utf8",
+		),
 	}),
 );
