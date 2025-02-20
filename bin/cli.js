@@ -1,11 +1,13 @@
 #!/usr/bin/env node
 
-process.removeAllListeners("warning");
+process.removeAllListeners("warning"); // eslint-disable-line no-undef
 
+/* eslint-disable import-x/no-nodejs-modules */
 import { spawn as _spawn } from "node:child_process";
 import { readFile, stat, writeFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import { parseArgs } from "node:util";
+/* eslint-enable import-x/no-nodejs-modules */
 
 export const args = parseArgs({
 	options: {

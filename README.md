@@ -118,3 +118,7 @@ export default {
 	...config,
 };
 ```
+
+## Legal
+
+Copyright (c) 2025 chr33s. See LICENSE for further details.
