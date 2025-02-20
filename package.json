@@ -16,6 +16,7 @@
 		"./vite": "./vite.js",
 		"./vitest": "./vitest.js"
 	},
+	"types": "./types.d.ts",
 	"bin": "./bin/cli.js",
 	"files": [
 		".editorconfig",
