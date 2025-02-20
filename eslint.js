@@ -1,3 +1,4 @@
+import css from "@eslint/css";
 import eslint from "@eslint/js";
 import prettier from "eslint-config-prettier";
 import importPlugin from "eslint-plugin-import-x";
@@ -97,6 +98,11 @@ export default config(
 			"**/node_modules/*",
 			"eslint.js",
 		],
+	},
+	{
+		files: ["**/*.css"],
+		language: "css/css",
+		...css.configs.recommended,
 	},
 	prettier,
 );
