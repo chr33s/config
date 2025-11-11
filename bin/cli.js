@@ -45,7 +45,6 @@ function spawn(cmd, args) {
 const configs = {
 	browserslist: "browserslist.js",
 	eslint: "eslint.config.js",
-	postcss: "postcss.config.js",
 	prettier: "prettier.config.js",
 	stylelint: "stylelint.config.js",
 	svgo: "svgo.config.js",

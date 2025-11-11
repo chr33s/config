@@ -8,6 +8,6 @@ export default {
 			},
 		},
 	],
-	plugins: ["prettier-plugin-packagejson", "prettier-plugin-tailwindcss"],
+	plugins: ["prettier-plugin-embed", "prettier-plugin-pkg", "prettier prettier-plugin-sh", "prettier-plugin-sql", "prettier-plugin-tailwindcss"],
 	tailwindFunctions: ["classNameMerge", "clsx", "twMerge"],
 };

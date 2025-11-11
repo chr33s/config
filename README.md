@@ -28,17 +28,6 @@ import config from "@chr33s/config/eslint";
 export default [...config];
 ```
 
-`postcss.config.js`
-
-```js
-import config from "@chr33s/config/postcss";
-
-/** @type {import("postcss").Config} */
-export default {
-	...config,
-};
-```
-
 `prettier.config.js`
 
 ```js
